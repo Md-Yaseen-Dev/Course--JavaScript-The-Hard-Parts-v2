@@ -57,7 +57,7 @@ function copyArraymultiplyby2(array) {
   return output;
 }
 
-const myArray = [2, 4, 6];
+const myArray = [1, 2, 3];
 const result = copyArraymultiplyby2(myArray);
 
 console.log(result);
@@ -97,6 +97,64 @@ _Given link below_:-
 **The outer function that takes in a function is our higher order function**
 
 **The function we insert is called callback function**
+
+Note:- Takes in a function or passes out a function
+
+Just a term to describe these functions - any function that does it we call that - but there's nothing different about them inherently
+
+```javascript
+function copyarray(arr, instruction) {
+  const output = [];
+
+  for (i = 0; i < arr.length; i++) {
+    output.push(instruction(arr[i]));
+  }
+  return output;
+}
+
+function multiplyby2(input) {
+  return input * 2;
+}
+
+const result = copyarray([1, 2, 3], multiplyby2);
+
+console.log(result);
+```
+
+| Global memory    |
+| ---------------- |
+| copyarray: func  |
+| multiplyby2:func |
+| output: [2,4,6]  |
+
+**output = copyarray(array,instruction)**
+
+|                | localmemory                    |
+| -------------- | ------------------------------ |
+|                | array:[1,2,3]                  |
+|                | instruction: multiplyby2(func) |
+|                | output:[2,4,6]                 |
+| output:[2,4,6] |                                |
+
+**instruction = multiplyby2**
+
+|               | localmemory |
+| ------------- | ----------- |
+|               | input: 1    |
+| instruction:2 |             |
+
+Note:- it is deleted after getting instruction
+
+---
+
+| call stack             |
+| ---------------------- | 
+| multiplyby2            |    
+| copyarraymultiplyby2() |
+ global()
+
+
+ Note:-stack will be delted after returning i.e multiplyby2
 
 _Given link below_:-
 
