@@ -33,7 +33,7 @@ function squarednumber(num) {
 ‘Parameters’ (placeholders) mean we don’t need to decide what data to run our functionality on until we run the function
 
 -Then provide an actual value (‘argument’)
-   when we run the function Higher order functions follow this same principle.
+when we run the function Higher order functions follow this same principle.
 
 -We may not want to decide exactly what some of our functionality is until we run our function
 
@@ -45,6 +45,46 @@ _link below:-_
 ### Repeating functionality
 
 In repeat functionality , It creates global memory and then create function label and then create myArray values and at last calling function it goes to call stack and create a execution context in local memory again create values and return to result.
+
+```javascript
+function copyArraymultiplyby2(array) {
+  const output = [];
+
+  for (let i = 0; i < array.length; i++) {
+    output.push(array[i] * 3);
+  }
+
+  return output;
+}
+
+const myArray = [2, 4, 6];
+const result = copyArraymultiplyby2(myArray);
+
+console.log(result);
+```
+
+| Global memory              |
+| -------------------------- |
+| copyArraymultiplyby2: func |
+| myarray:[1,2,3]            |
+| result: [2,4,6]            |
+
+**result = copyarraymuliplyby2([1,2,3])**
+
+|                | localmemory    |
+| -------------- | -------------- |
+|                | array:[1,2,3]  |
+|                | output:[2,4,6] |
+| output:[2,4,6] |                |
+
+---
+
+| call stack             |
+| ---------------------- |
+|                        |
+| copyarraymultiplyby2() |
+
+      global()
 
 _Given link below_:-
 
