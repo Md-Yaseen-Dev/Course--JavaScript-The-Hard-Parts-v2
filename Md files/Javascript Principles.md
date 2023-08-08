@@ -73,4 +73,4 @@ global()
 
 Note:- The function that enter the call stack and return the result . and then the function is poped and at bottom of the call stack there will be global
 
-* for suppose there are function and nested function . so after returning the value of  nested function it is popped and function will be bottom of the stack. In simple words parent will be the bottom of the stack after returning the result.
+* for suppose there are function and nested function . so after returning the value of  nested function it is popped and function will be bottom of the stack. In simple words parent will be the bottom of the stack after returning the result of nested function.
