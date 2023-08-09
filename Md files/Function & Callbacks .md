@@ -210,3 +210,41 @@ Note:- it is a very standard style
 - But at least for our purposes here  they are ‘syntactic sugar’ - we’ll see their full effects later
 
 - Understanding how they’re working under-the-hood is vital to avoid confusion
+
+
+**Note:-** More and more the most valuable resource as a  developers is the developer's  time and ability to reasons
+
+- On these marginal cases readabilty comes first.
+
+
+### Pair programming
+
+The most effective way to grows as a software engineer.
+
+- Researcher :- Avoids blocka by reading everything they can find on their block/blog.
+
+- stackOverflow:- Uses code snippets to fix bug without knowing how they work
+
+
+**Pair programming**
+
+- Tackle blocks with a partner
+
+- Stay focused on the problem
+
+- Refine techinal communication
+
+- Collaborate to solve problem.
+
+
+**callbacks**
+
+-I know what a variable is
+-I've created a function before
+-I've added a CSS style before
+-I have implemented a sort algorithm (bubble, merge etc)
+-I can add a method to an object’s prototype 
+-I understand the event loop in JavaScript
+-I understand 'callback functions'
+-I can implement filter
+-I can handle collisions in a hash table
