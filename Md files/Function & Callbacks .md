@@ -148,14 +148,65 @@ Note:- it is deleted after getting instruction
 ---
 
 | call stack             |
-| ---------------------- | 
-| multiplyby2            |    
+| ---------------------- |
+| multiplyby2            |
 | copyarraymultiplyby2() |
- global()
 
+global()
 
- Note:-stack will be delted after returning i.e multiplyby2
+Note:-stack will be delted after returning i.e multiplyby2
 
 _Given link below_:-
 
 [Js - Higher order function](../Js/Functions%20%26%20callbacks/Higher%20order%20function.js)
+
+### Arrow Functions
+
+**Introducing arrow functions - ashorthand way to save functions**
+
+```javascript
+// function Declaration
+function multiplyBy2(input) {
+  return input * 2;
+}
+const output = multiplyBy2(3);
+
+// This is readabilty. this is easy to read the code
+```
+
+```javascript
+// Arrow function - Es6
+
+const multiply2 = (input) => {
+  return input * 2;
+};
+
+//  it stores in global memory same as function.
+
+//  It is designed for legibility , but maybe not for readability
+
+// legibility means nice and short stuff
+```
+
+```javascript
+const multiplyBy2 = (input) => input * 2;
+
+// here it is automatically inserted return statement.
+
+const output = multiplyBy2(3);
+
+
+const multiplyBy2 = input => input * 2;
+
+// here parameters and return statement inserted automatically for us.
+
+Note:- it is a very standard style
+```
+
+**Anonymous and arrow functions**
+
+- Improve immediate legibility of the code
+
+- But at least for our purposes here  they are ‘syntactic sugar’ - we’ll see their full effects later
+
+- Understanding how they’re working under-the-hood is vital to avoid confusion
