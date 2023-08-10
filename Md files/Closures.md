@@ -186,18 +186,55 @@ myNewFunction(); // 2
 | myNewfunction: <strike> 1</strike> 2 |
 | global() (1)                         |
 
-**Note**:- For above example . In call stack , when MynewFunction returned the value it is popped . and again other myNewFunction is pushed , so it do execution context , In the execution counter is increased i.e counter++. it comes to myNewFunction  In backpack there the counter is 1. so adds 1 and then the counter = 2  we go.
+**Note**:- For above example . In call stack , when MynewFunction returned the value it is popped . and again other myNewFunction is pushed , so it do execution context , In the execution counter is increased i.e counter++. it comes to myNewFunction In backpack there the counter is 1. so adds 1 and then the counter = 2 we go.
 
 **In definition label , the function storage has attached to it a permanent memory.**
 
-
 That behind the scenes, in javascript immediately gets a hidden property.
 
-square brackets before and after them, in the spec, in the rules of javascript. 
+square brackets before and after them, in the spec, in the rules of javascript.
 
 Hidden property = `[[scope]]`
 
-This hidden scope property is hidden behind the function of backpack. and it is permanent meomory
----
+## This hidden scope property is hidden behind the function of backpack. and it is permanent meomory
 
+## Mulitple Closure instance
+
+```javascript
+function outer() {
+  let counter = 0;
+  function incrementCounter() {
+    counter++;
+  }
+  return incrementCounter;
+}
+
+const myNewFunction = outer();
+myNewFunction(); // 1
+myNewFunction(); // 2
+
+const anotherFunc = outer();
+
+anotherFunc(); //1
+anotherFunc(); //2
+```
+
+| Global memory                              |
+| ------------------------------------------ |
+| outer: func                                |
+| myNewFunction: (incrementfunc)func (1),(2) |
+| anotherFunc : func (1,2) [backpack]        |
+|                                            |
+
+| call stack   |
+| ------------ |
+|              |
+| anotherFunc  |
+| global() (1) |
+
+**Individual backpacks**
+
+If we run 'outer' again and sotre the returned 'incrementCounter' function definition in 'anotherFunction'. this new incrementCounter functionwas created in a new execution and therefore has a brand new independent backpack.
+
+--- 
 
