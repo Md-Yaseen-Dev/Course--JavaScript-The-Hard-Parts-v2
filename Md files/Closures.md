@@ -158,8 +158,46 @@ _Note_:- It will be deleted after returning the function
 | <strike>outer()2</strike>(poped) |
 | global() 1                       |
 
-**Note:-** it will check counter in mynewfunction . if it is not found it will check to the parent function i.e global function.the counter word not found in the global.we think error.But No! it remains in the Mynewfunction = outer(). while returning the function, local memory is deleted .before it will backup the data on the the back function .
+**Note:-** it will check counter in mynewfunction . if it is not found it will check to the parent function i.e global function.the counter word not found in the global.we think error.But No! it remains in the Mynewfunction = outer(). while returning the function, local memory is deleted .before it will backup the data on the the back function i.e the data is attached to the function definiition .
 
 ---
 
 ## Function Closure
+
+**Calling a function outside of the function call in which it was defined**
+
+```javascript
+function outer() {
+  let counter = 0;
+  function incrementCounter() {
+    counter++;
+  }
+  return incrementCounter;
+}
+
+const myNewFunction = outer();
+myNewFunction(); // 1
+myNewFunction(); // 2
+```
+
+| call stack                           |
+| ------------------------------------ |
+|                                      |
+| myNewfunction: <strike> 1</strike> 2 |
+| global() (1)                         |
+
+**Note**:- For above example . In call stack , when MynewFunction returned the value it is popped . and again other myNewFunction is pushed , so it do execution context , In the execution counter is increased i.e counter++. it comes to myNewFunction  In backpack there the counter is 1. so adds 1 and then the counter = 2  we go.
+
+**In definition label , the function storage has attached to it a permanent memory.**
+
+
+That behind the scenes, in javascript immediately gets a hidden property.
+
+square brackets before and after them, in the spec, in the rules of javascript. 
+
+Hidden property = `[[scope]]`
+
+This hidden scope property is hidden behind the function of backpack. and it is permanent meomory
+---
+
+
