@@ -238,3 +238,15 @@ If we run 'outer' again and sotre the returned 'incrementCounter' function defin
 
 --- 
 
+## Practical Applications
+
+#### Closure gives or function presistent memories and entirely new toolkit for writing professional code
+
+
+**Helper functions:-** Everyday professional helper functions like "once and "memorize.
+
+**Iterators and generators:** Which use lexical scoping and closure to achieve the most contemporary patterns for handling data in javascript.
+
+**Module pattern**: Preserve state for the life of an application without polluting the global namespace.
+
+**Asynchronous Javascript** Callbacks and Promises rely on closure to persist state in an aynchronous enivornment.
