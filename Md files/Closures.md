@@ -194,7 +194,7 @@ That behind the scenes, in javascript immediately gets a hidden property.
 
 square brackets before and after them, in the spec, in the rules of javascript.
 
-Hidden property = `[[scope]]`
+Hidden property = `[[scope]]`                         
 
 ## This hidden scope property is hidden behind the function of backpack. and it is permanent meomory
 
@@ -234,7 +234,7 @@ anotherFunc(); //2
 
 **Individual backpacks**
 
-If we run 'outer' again and sotre the returned 'incrementCounter' function definition in 'anotherFunction'. this new incrementCounter functionwas created in a new execution and therefore has a brand new independent backpack.
+If we run 'outer' again and store the returned 'incrementCounter' function definition in 'anotherFunction'. this new incrementCounter function was created in a new execution and therefore has a brand new independent backpack.
 
 --- 
 
