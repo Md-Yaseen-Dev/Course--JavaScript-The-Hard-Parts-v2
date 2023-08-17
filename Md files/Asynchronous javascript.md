@@ -124,15 +124,15 @@ console.log("Me first");
 | ---------------- |
 | printHello :func |
 
+---
 
-- setTimeout is label to set the timer in a web-browser
-
+**setTimeout is label to set the timer in a web-browser**
 
 ```Text
 setTImeout(printhello,1000);
 
 0ms : web=browser(Timer)-started
-1ms: console.log("me first");  
+1ms: console.log("me first");
 .
 .
 .      In background the time is passing.
@@ -140,4 +140,43 @@ setTImeout(printhello,1000);
 .
 1000ms : when the timer completes and then it is pushed into callstack
 ```
-Note:- SetTimeout is used to set the timer in the web-browser. 
+
+Note:- SetTimeout is used to set the timer in the web-browser.
+
+## Web API browser and calling queue and Event loop
+
+**Interacating with a world outside of javascript now so we need rules.**
+
+```javascript
+function printhello() {
+  console.log("hello");
+}
+function blockfor1sec() {
+  console.log("hey folks");
+}
+setTimeout(printhello, 0);
+blockfor1sec();
+console.log("Me first");
+```
+
+There is a puzzle we need to know more about it.
+
+- A printhello() function after completion at 0ms.but it will not push into a call stack. because the little function inputs is passed into another function called callbacks. then the rule of spec says that it move into the queue of callbacks.
+
+- at 1ms on the nextline blcokfor1sec with executes and create a new brand execution context. and it push into callstack.
+
+**blockfor1sec**
+| | local memory |
+| ------ | ----- |  
+| 1000ms | |
+
+| call stack   |
+| ------------ |
+| blockfor1sec |
+
+so, 1000ms it will run blockfor1sec().
+
+* printhello() function will be waiting eagarly to push into the stack but before that 1001ms global execution console.log("Me first") we print. so atlast all the call stack are popped then. this is callback queue printhello() will push into call stack.
+
+**Note:-** All regular code will run first until. I ever touch anything from the queue. this feature is known as event loop.
+
