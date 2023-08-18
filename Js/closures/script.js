@@ -89,11 +89,15 @@ function outer1() {
     }
     
     const myNewFunction1 = outer1();
-    myNewFunction1(); // 1
-    myNewFunction1(); // 2
+    setTimeout(()=>{
+      myNewFunction1(); 
+    },2000)// 1
+   //  myNewFunction1(); // 2
     
-    const anotherFunc1 = outer1();
+   //  const anotherFunc1 = outer1();
     
-    anotherFunc1(); //1
-    anotherFunc1(); //1
-    anotherFunc1(); //1
+   //  anotherFunc1(); //1
+   //  anotherFunc1(); //1
+   //  anotherFunc1(); //1
+
+    console.log("running asynchronously")
