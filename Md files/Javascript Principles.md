@@ -6,9 +6,10 @@
 
 **Threads of Execution**:- Goes through the code line by line and runs/execute each line.
 
-1. It threads its way down and executes, that's fancy word for doing the code.(threads of execution)
+ It threads its way down and executes, that's fancy word for doing the code.(threads of execution)
 
-2. The stuff that encouters, if it is saying save something like, variable and constant or even some code itself known as function. and saves that stuff in computer memory.
+
+**Memory** The stuff that encouters, if it is saying save something like, variable and constant or even some code itself known as function. and saves that stuff in computer memory.
 
 ```Javascript
 Example:-
