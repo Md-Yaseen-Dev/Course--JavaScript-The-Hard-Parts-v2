@@ -4,9 +4,9 @@
 
 **ES6 + Solution (Promises)**
 
-Using two pronged facade funcations taht both.
+Using two pronged facade funtions that both.
 
-- intiate background wbe browser work and
+- intiate background web browser work and
 
 - Return a placeholder object(promise) immediately in javascript
 
