@@ -101,7 +101,7 @@ console.log("Me first!");
 | display:func                                        |
 | printhello:func                                     |
 | blockfor300ms:func                                  |
-| futureData: {value:---, onfulfilled:[display:func]} |
+| futureData: {value:---, onfulfilled:[display:func]}|
 
 **Working**:-
 
