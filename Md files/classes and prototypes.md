@@ -17,10 +17,9 @@ user1.increment(); //user1.score -> 4  // why i am getting undefined 🤔
 
 Let's keep creating our objects. What alternative techniques do we have for creating objects?
 
-
 ### Creating user2 user dot notation
 
-*Declare an empty object and add properties with dot notation*
+_Declare an empty object and add properties with dot notation_
 
 ```javascript
 const user2 = {};
@@ -44,23 +43,69 @@ console.log(user2.increment()); //11 but undefined why 🤔
 
 ---
 
-### Creating user3 useing object.create 
+### Creating user3 using object.create
 
 Javascript whose output will be an empty object forevermore?
 
-*object.create is going to give us fine granted control over our object later on*
+_object.create is going to give us fine granted control over our object later on_
 
 ```javascript
 //It is built in function
 
 const user3 = OBject.create(null);
 
-user3.name ="roshan",
+(user3.name = "roshan"),
+  (user3.score = 70),
+  (user3.increment = function () {
+    user3.score++;
+  });
+```
 
-user3.score = 70,
+**Solution 1. Generate objects using a function**
 
-user3.increment = function(){
-    user3.score++
+```javascript
+function userCreator(name, score) {
+  const newUser = {};
+  newUser.name = name;
+  newUser.score = score;
+  newUser.increment = function () {
+    newUser.score++;
+  };
+  return newUser;
 }
 
+const user1 = userCreator("will", 3);
+const user2 = userCreator("Tim", 5);
 ```
+
+**global memory**
+
+| global memory                                          |
+| ------------------------------------------------------ |
+| userCreator: func                                      |
+| user1 : {name: "will", score : "3", increment : func } |
+| user1 : {name: "Tim", score : "5", increment : func }  |
+
+**Local memory- user1 = userCreator("will", "3")**
+
+|     | Local memory                                    |
+| --- | ----------------------------------------------- |
+|     | name: will                                      |
+|     | score : 3                                       |
+|     | newUser : {name:will,score:3 , increment: func} |
+
+_Note:- this execution context will be deleted but a function on it , that function was linked to all the surrounding memory. with the help of backpack._
+
+**Local memory- user1 = userCreator("Tim", "5")**
+
+|     | Local memory                                   |
+| --- | ---------------------------------------------- |
+|     | name: Tim                                      |
+|     | score : 5                                      |
+|     | newUser : {name:Tim,score:5 , increment: func} |
+
+_Note:- this execution context will be deleted but a function on it , that function was linked to all the surrounding memory. with the help of backpack._
+
+
+
+**Note:- We cant store the same function twice fundamentally because the code of name and score is different and increment is identical**
