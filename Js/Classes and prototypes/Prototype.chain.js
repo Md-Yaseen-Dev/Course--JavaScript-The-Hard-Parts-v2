@@ -1,0 +1,1 @@
+// Solution 2: Using the prototype chain
