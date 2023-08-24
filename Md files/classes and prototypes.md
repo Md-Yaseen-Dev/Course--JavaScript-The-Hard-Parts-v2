@@ -52,15 +52,15 @@ _object.create is going to give us fine granted control over our object later on
 ```javascript
 //It is built in function
 
-const user3 = OBject.create(null);
+const user3 = Object.create(null);
 
-(user3.name = "roshan"),
-  (user3.score = 70),
-  (user3.increment = function () {
+user3.name = "roshan",
+  user3.score = 70,
+  user3.increment = function () {
     user3.score++;
-  });
+  };
 ```
-
+oo
 **Solution 1. Generate objects using a function**
 
 ```javascript
@@ -109,3 +109,36 @@ _Note:- this execution context will be deleted but a function on it , that funct
 
 
 **Note:- We cant store the same function twice fundamentally because the code of name and score is different and increment is identical**
+
+
+## Prototype chain
+
+**solution:2 using the prototype chain**
+
+```Text
+Store the increment function in just one object and have the interpreter. if it doesn't found the function on user1. look up to that object to check if it's there.
+
+Link user1 and functionStore so the interpreter, on not finding increment, makes sure to check up in functionStore where it would find it.
+
+Make the link with object.create() technique
+
+```
+
+
+```javascript
+
+function userCreator(name, score){
+const newUser = Object.create(userFunctionStore);
+ newUser.name = name;
+ newUser.score = score;
+ return newUser;
+
+}
+const userFunctionStore = {
+ increment: function(){this.score++;},
+ login: function(){console.log("Logged in");}
+};
+const user1 = userCreator("Will", 3);
+const user2 = userCreator("Tim", 5);
+user1.increment();
+```
