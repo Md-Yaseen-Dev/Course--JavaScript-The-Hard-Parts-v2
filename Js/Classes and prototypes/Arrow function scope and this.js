@@ -11,7 +11,9 @@ function userCreator(name, score) {
   
         console.log(this.score++,question);
       }
-      add1("before: add1 is  not undefined ???");
+    //   add1("before: add1 is  not undefined ???");
+      console.log(this.score);
+
     }
 }
 
