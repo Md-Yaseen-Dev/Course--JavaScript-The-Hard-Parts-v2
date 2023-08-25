@@ -29,6 +29,8 @@ user2.increment = function da3(){
      return user2.price++
 }
 console.log(user2.increment())
+console.log(user2.increment())
+
 
 
 
