@@ -8,11 +8,13 @@ function userCreator(name, score) {
 const userFunctionStore = {
   increment: function () {
     function add1(question) {
-      console.log(this.score,question);
+
+      console.log(this.score ,question);
     }
     add1("before: add1 is undefined ???");
 
     add1.call(this,"hey working")
+// this.score++
     /*
          if you invoke inside the function it will be undefined default
          */
@@ -27,7 +29,7 @@ const user2 = userCreator("tikcel", 5);
 user1.increment();
 user1.increment();
 user1.increment();
-userFunctionStore.increment.call(user1);
+// userFunctionStore.increment.call(user1);
 // console.log(user1.increment());
 
 // ---- using explict method--------------
